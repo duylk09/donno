@@ -39,7 +39,7 @@ function Header(){
                         <div className="profile bg-gradient-primary-to-secondary">
                         {/* TIP: For best results, use a photo with a transparent background like the demo example below*/}
                         {/* Watch a tutorial on how to do this on YouTube (link)*/}
-                        <img className="profile-img" src="donno/src/assets/profile.png" alt="..." />
+                        <img className="profile-img" src="./donno/src/assets/profile.png" alt="..." />
                         <div className="dots-1">
                             {/* SVG Dots*/}
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 191.6 1215.4"  xmlSpace="preserve">
