@@ -1,3 +1,5 @@
+import profileImg from './../assets/profile.png'
+
 
 function Header(){
     return(
@@ -5,7 +7,7 @@ function Header(){
             {/* Navigation*/}
             <nav className="navbar navbar-expand-lg navbar-light bg-white py-3">
                 <div className="container px-5">
-                <a className="navbar-brand" href="index.html"><span className="fw-bolder text-primary">Start Bootstrap</span></a>
+                <a className="navbar-brand" href="index.html"><span className="fw-bolder text-primary">DON LE</span></a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon" /></button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
@@ -39,7 +41,7 @@ function Header(){
                         <div className="profile bg-gradient-primary-to-secondary">
                         {/* TIP: For best results, use a photo with a transparent background like the demo example below*/}
                         {/* Watch a tutorial on how to do this on YouTube (link)*/}
-                        <img className="profile-img" src="/donno/public/profile.png" alt="..." />
+                        <img className="profile-img" src={profileImg} alt="..." />
                         <div className="dots-1">
                             {/* SVG Dots*/}
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 191.6 1215.4"  xmlSpace="preserve">
