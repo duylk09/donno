@@ -14,13 +14,13 @@ function Navigationbar(){
                     <Nav className="me-auto">
                         <Nav.Link href="/">Home</Nav.Link>
                         <Nav.Link href="/routes/resume.jsx">Resume</Nav.Link>
-                        <NavDropdown title="Project" id="basic-nav-dropdown">
+                        {/* <NavDropdown title="Project" id="basic-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Project 1</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">Project 2</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.3">Project 3</NavDropdown.Item>
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                        </NavDropdown>
+                        </NavDropdown> */}
                     </Nav>
                 </Navbar.Collapse>
             </Container>

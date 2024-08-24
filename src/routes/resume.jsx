@@ -3,25 +3,30 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+const colstyle = { border: '1px solid black' };
+
 function Resume(){
+
     return(
         <>
             <Navigationbar/>
-            <div class="text-center">
-                <h1>Resume</h1>
-            </div>
-            <div class="text-left">
-                <h2>Experience</h2>
-            </div>
             <Container>
+                <div class="text-center">
+                    <h1>Resume</h1>
+                </div>
+                <div class="text-left">
+                    <h2>Experience</h2>
+                </div>
+            
+            
                 <Row>
-                    <Col sm={4} style={{ border: '1px solid blue' }}>
+                    <Col sm={4} style={colstyle}>
                     12/2022 - 09/2023<br/>
                     <b>Global Ambassador</b><br/>
                     Leeds Beckett University<br/>
                     <i>Leeds, UK</i>
                     </Col>
-                    <Col sm={8} style={{ border: '1px solid blue' }}>
+                    <Col sm={8} style={{ border: '1px solid black' }}>
                         <ul>
                             <li>
                                 PR & Promotion: promoted the University through strategic engagement 
@@ -35,13 +40,13 @@ function Resume(){
                     </Col>
                 </Row>
                 <Row>
-                    <Col sm={4} style={{ border: '1px solid blue' }}>
+                    <Col sm={4} style={colstyle}>
                     04/2020 - 09/2022<br/>
                     <b>Learning Coach</b><br/>
                     Freelance<br/>
                     <i>Ho Chi Minh City, Vietnam</i>
                     </Col>
-                    <Col sm={8} style={{ border: '1px solid blue' }}>
+                    <Col sm={8} style={colstyle}>
                         <ul>
                             <li>
                                 Achieved 85% first-month retention through strategic coaching. Secured 90% commitment in the initial 
@@ -64,13 +69,13 @@ function Resume(){
                 </Row>
 
                 <Row>
-                    <Col sm={4} style={{ border: '1px solid blue' }}>
+                    <Col sm={4} style={colstyle}>
                     03/2016 - 04/2020<br/>
                     <b>Head of Coach</b><br/>
                     Wall Street English<br/>
                     <i>Ho Chi Minh City, Vietnam</i>
                     </Col>
-                    <Col sm={8} style={{ border: '1px solid blue' }}>
+                    <Col sm={8} style={colstyle}>
                         <ul>
                             <li>
                             	Student Relationship: Achieved over 80% monthly retention by delivering 
@@ -116,48 +121,44 @@ function Resume(){
 
                 
                 
-            </Container>
             <div class="text-left">
                 <h2>Education</h2>
             </div>            
-            <Container>
                 <Row>
-                    <Col sm={4} style={{ border: '1px solid blue' }}>
+                    <Col sm={4} style={colstyle}>
                     2022 - 2023<br/>
                     <b>Master of Arts in Education</b><br/>
                     Leeds Beckett University<br/>
                     <i>Leeds, UK</i>
                     </Col>
-                    <Col sm={8} style={{ border: '1px solid blue' }}>
+                    <Col sm={8} style={colstyle}>
                         Relevant modules: Research Method, Coaching and Mentoring, Contemporary Issues in Education.
                         Dissertation: Exploring Current Challenges in Language Learning in Vietnam and Proposed Solutions: A Literature Review (Distinction).
                     </Col>
                 </Row>
                 <Row>
-                    <Col sm={4} style={{ border: '1px solid blue' }}>
+                    <Col sm={4} style={colstyle}>
                     2007 - 2011<br/>
                     <b>Bachelor's degree in Computer Science</b><br/>
                     Saigon Technology University<br/>
                     <i>Ho Chi Minh City, Vietnam</i>
                     </Col>
-                    <Col sm={8} style={{ border: '1px solid blue' }}>
+                    <Col sm={8} style={colstyle}>
                         Outstanding Coursework: Database, Database Administration, Management Information systems.
                     </Col>
                 </Row>
-            </Container>
 
             <div class="text-left">
-                <h2>Volunter Activities</h2>
+                <h2>Volunteer Activities</h2>
             </div>
-            <Container>
                 <Row>
-                    <Col sm={4} style={{ border: '1px solid blue' }}>
+                    <Col sm={4} style={colstyle}>
                     03/2022 - 09/2023<br/>
                     <b>Course Representative</b><br/>
                     Leeds Beckett University<br/>
                     <i>Leeds, UK</i>
                     </Col>
-                    <Col sm={8} style={{ border: '1px solid blue' }}>
+                    <Col sm={8} style={colstyle}>
                         <ul>
                             <li>
                             	Course Improvement: Worked with the Director and The Student Union to identify areas for improvement within the course and propose constructive suggestions for enhancement. 
@@ -175,13 +176,13 @@ function Resume(){
                     </Col>
                 </Row>
                 <Row>
-                    <Col sm={4} style={{ border: '1px solid blue' }}>
+                    <Col sm={4} style={colstyle}>
                     09/2018<br/>
                     <b>Professional Speaker</b><br/>
                     SPE Vietnam<br/>
                     <i>Ho Chi Minh City, Vietnam</i>
                     </Col>
-                    <Col sm={8} style={{ border: '1px solid blue' }}>
+                    <Col sm={8} style={colstyle}>
                         <ul>
                             <li>
                             	Presented a conference focused on effective English language study strategies    
@@ -191,13 +192,13 @@ function Resume(){
                     </Col>
                 </Row>
                 <Row>
-                    <Col sm={4} style={{ border: '1px solid blue' }}>
+                    <Col sm={4} style={colstyle}>
                     2015 - 2016<br/>
                     <b>English Teacher</b><br/>
                     Volunteer House Vietnam<br/>
                     <i>Ho Chi Minh City, Vietnam</i>
                     </Col>
-                    <Col sm={8} style={{ border: '1px solid blue' }}>
+                    <Col sm={8} style={colstyle}>
                         <ul>
                             <li>
                             	Provided free English classes for underprivileged children, offering them valuable educational opportunities.                            
@@ -206,43 +207,43 @@ function Resume(){
                         </ul>
                     </Col>
                 </Row>
-            </Container>
             <div class="text-left">
                 <h2>Core Skills</h2>
             </div>
-            <Container>
                 <Row>
-                    <Col sm={4} style={{ border: '1px solid blue' }}>
+                    <Col sm={4} style={colstyle}>
                     	IT skills
                     </Col>
-                    <Col sm={8} style={{ border: '1px solid blue' }}>
+                    <Col sm={8} style={colstyle}>
                         Python, React, Microsoft Office (Excel, Word, PowerPoint), Canva, Google Sheets/Site/Classroom, Zoom.
                     </Col>
                 </Row>
                 <Row>
-                    <Col sm={4} style={{ border: '1px solid blue' }}>
+                    <Col sm={4} style={colstyle}>
                     	Interpersonal skills
                     </Col>
-                    <Col sm={8} style={{ border: '1px solid blue' }}>
+                    <Col sm={8} style={colstyle}>
                         Critical thinking, communication, presentation, cultural awareness, problem solving.
                     </Col>
                 </Row>
                 <Row>
-                    <Col sm={4} style={{ border: '1px solid blue' }}>
+                    <Col sm={4} style={colstyle}>
                     	Professional skills                   
                     </Col>
-                    <Col sm={8} style={{ border: '1px solid blue' }}>
+                    <Col sm={8} style={colstyle}>
                         Project management, customer service, event management, scheduling, coaching, teaching.
                     </Col>
                 </Row>
                 <Row>
-                    <Col sm={4} style={{ border: '1px solid blue' }}>
+                    <Col sm={4} style={colstyle}>
                     	Certifications                   
                     </Col>
-                    <Col sm={8} style={{ border: '1px solid blue' }}>
+                    <Col sm={8} style={colstyle}>
                         Safeguarding in Education, Prevent Awareness.
                     </Col>
                 </Row>
+            
+
             </Container>
         </>
 
