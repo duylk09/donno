@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client'
 import Home from './routes/home.jsx'
 import Resume from './routes/resume.jsx'
 
-import './index.css'
+//import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import {
