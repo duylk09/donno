@@ -8,11 +8,11 @@ import Resume from './routes/resume.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import {
-  createBrowserRouter,
+  createHashRouter,
   RouterProvider,
 } from 'react-router-dom'
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/',
     element: <Home/>
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
     path: 'resume',
     element: <Resume/>
   }
-], {basename: "/donno"}
+], //{basename: "/donno"}
 );
 
 

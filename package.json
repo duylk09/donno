@@ -1,8 +1,9 @@
 {
   "name": "donno",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
+  "homepage": "https://duylk09.github.io/donno/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

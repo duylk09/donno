@@ -8,10 +8,10 @@ function Home(){
     <>
       <Navigationbar/>
       <Container>
-        <div class="text-center">
-          <img src={profilePic} class="rounded mx-auto d-block" style={{ width: '400px' }}/>
+        <div className="text-center">
+          <img src={profilePic} className="rounded mx-auto d-block" style={{ width: '400px' }}/>
         </div>
-        <div class="text-center">
+        <div className="text-center">
           <h1>About me</h1>
           <p>
           Professionally versed in customer service, English coaching, event management, learning assistance, 
