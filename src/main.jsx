@@ -18,10 +18,13 @@ const router = createBrowserRouter([
     element: <Home/>
   },
   {
-    path: '/routes/resume.jsx',
+    path: 'resume',
     element: <Resume/>
   }
-]);
+], {basename: "/donno"}
+);
+
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
