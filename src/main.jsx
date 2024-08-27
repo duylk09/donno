@@ -3,6 +3,8 @@ import { createRoot } from 'react-dom/client'
 
 import Home from './routes/home.jsx'
 import Resume from './routes/resume.jsx'
+import Project1 from './routes/project1.jsx';
+
 
 //import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -20,6 +22,10 @@ const router = createHashRouter([
   {
     path: 'resume',
     element: <Resume/>
+  },
+  {
+    path: 'project1',
+    element: <Project1/>
   }
 ], //{basename: "/donno"}
 );
