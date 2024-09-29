@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
-  "homepage": "https://duylk09.github.io/donno/",
+  "homepage": "https://donno.me/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
