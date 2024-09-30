@@ -43,7 +43,7 @@ export default function Statistics(props) {
                 const matchesYear = item[0] == year;
                 const matchesNationality = !selectedNationality || item[2] === selectedNationality;
                 const matchesIndustry = !selectedIndustry || item[4] === selectedIndustry;
-                const matchesOccupation = !selectedOccupation || item[3] === selectedOccupation;
+                const matchesOccupation = !selectedOccupation || item[3].includes(selectedOccupation);
         
                 return matchesYear && matchesNationality && matchesIndustry && matchesOccupation;
             });
@@ -53,7 +53,6 @@ export default function Statistics(props) {
         
         if(result != applications)
         {
-            console.log("LLLLLLLLLLLLLLL")
             setApplications(result);
         }
 
@@ -61,17 +60,14 @@ export default function Statistics(props) {
 
     function handleYearChange(event){
         setYear(event.target.value);
-        // getSelectedValue;
     }
 
     function handleNationalityChange(event){
         setNationality(event.target.value);
-        // getSelectedValue();
     }
 
     function handleIndustryChange(event){
         setIndustry(event.target.value);
-        // getSelectedValue();
     }
 
     function handleOccupationChange(event){
@@ -113,17 +109,7 @@ export default function Statistics(props) {
     
     return(
         <>
-            <div>
-                <label htmlFor="years">Select Year:</label>
-                <select id={`year-${id}`} name="year" defaultValue="" onChange={(e) => handleYearChange(e)}>
-                    <option key="default" value=""></option>
-                    {years.map((year, index) => (
-                    <option key={index} value={year}>
-                        {year}
-                    </option>
-                    ))}
-                </select>
-            </div>
+
             {/* Select box: Nationality */}
             <div>
                 <label htmlFor="nationality">Select Nationality:</label>
@@ -159,7 +145,7 @@ export default function Statistics(props) {
                 </select>
             </div> 
             {/* <Button variant="primary" onClick={getSelectedValue}>Search</Button> */}
-            <div>Result: {applications.toString()}</div>
+            {/* <div>Result: {applications.toString()}</div> */}
             <BarChart years={years} applications={applications}/>
 
                     
