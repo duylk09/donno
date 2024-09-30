@@ -9,7 +9,7 @@ function Navigationbar(){
         <>
         <Navbar expand="lg" className="bg-body-tertiary">
             <Container>
-                <NavLink className="navbar-brand" to="/">Don Le</NavLink>
+                <NavLink className="navbar-brand text-primary" to="/"><strong>Don Lê</strong> </NavLink>
             
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">

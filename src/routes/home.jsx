@@ -1,6 +1,7 @@
 import Navigationbar from "../components/Navigationbar"
 import profilePic from '../assets/profile.png'
 import Container from 'react-bootstrap/Container';
+import '../index.css'
 
 function Home(){
 
