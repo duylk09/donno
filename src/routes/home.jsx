@@ -1,7 +1,7 @@
 import Navigationbar from "../components/Navigationbar"
 import profilePic from '../assets/profile.png'
 import Container from 'react-bootstrap/Container';
-import '../index.css'
+
 
 function Home(){
 
@@ -9,8 +9,9 @@ function Home(){
     <>
       <Navigationbar/>
       <Container>
+        <div></div>
         <div className="text-center">
-          <img src={profilePic} className="rounded mx-auto d-block" style={{ width: '400px' }}/>
+          <img src={profilePic} className="rounded mx-auto d-block" style={{ width: '500px' }}/>
         </div>
         <div className="text-center">
           <h1>About me</h1>

@@ -1,3 +1,6 @@
-.blue-text {
-    color: blue;
+.text-primary {
+    color: rgb(30, 48, 243) !important;
+}
+body {
+    font-family:sans-serif;
 }

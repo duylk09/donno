@@ -8,7 +8,7 @@ import Project1 from './routes/project1.jsx';
 
 //import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import './index.css'
 import {
   createHashRouter,
   RouterProvider,

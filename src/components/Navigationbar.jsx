@@ -9,16 +9,16 @@ function Navigationbar(){
         <>
         <Navbar expand="lg" className="bg-body-tertiary">
             <Container>
-                <NavLink className="navbar-brand text-primary" to="/"><strong>Don Lê</strong> </NavLink>
+                <NavLink className="navbar-brand text-primary" to="/" style={{ fontSize: '1.5rem' }}><strong>Don Lê</strong></NavLink>
             
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
+                    <Nav className="ms-auto" >
                         <NavLink className="nav-link" to="/">Home</NavLink>
                         <NavLink className="nav-link" to="/resume">Resume</NavLink>
                         <NavDropdown title="Project" id="basic-nav-dropdown">
                             <NavDropdown.Item>
-                                <NavLink className="nav-link" to="/project1">Project 1</NavLink>
+                                <NavLink className="nav-link strong" to="/project1">Project 1</NavLink>
                             </NavDropdown.Item>
                             {/* <NavDropdown.Item href="#action/3.2">Project 2</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.3">Project 3</NavDropdown.Item>
