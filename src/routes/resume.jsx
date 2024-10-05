@@ -2,23 +2,75 @@ import Navigationbar from "../components/Navigationbar";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { Button, Card } from "react-bootstrap";
+import resumeFile from "../assets/Don Le CV.pdf"
 
 const colstyle = { border: '1px solid black' };
 
-function Resume(){
+function Resume() {
 
-    return(
+    return (
         <>
-            <Navigationbar/>
-            <Container>
-                <div class="text-center">
+            <Navigationbar />
+            <Container className="py-5 px-5">
+                <div className="text-center mb-5">
                     <h1>Resume</h1>
                 </div>
-                <div class="text-left">
-                    <h2>Experience</h2>
+                <div className="mb-4 text-center">
+                    <a className="mb-5" href={resumeFile} download>
+                        <Button variant="primary">Download Resume</Button>
+                    </a>
                 </div>
-            
-            
+                <Container>
+                    <Card className="d-inline-flex m-5" style={{ width: '18rem' }}>
+                        <Card.Img variant="top" src="../../coaching.png" />
+                        <Card.Body>
+                            <Card.Title>Coaching skills</Card.Title>
+                            <Card.Text>
+                                Some quick example text to build on the card title and make up the
+                                bulk of the card's content.
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+
+                    <Card className="d-inline-flex m-5" style={{ width: '18rem' }}>
+                        <Card.Img variant="top" src="../../coaching.png" />
+                        <Card.Body>
+                            <Card.Title>Coaching skills</Card.Title>
+                            <Card.Text>
+                                Some quick example text to build on the card title and make up the
+                                bulk of the card's content.
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+
+                    <Card className="d-inline-flex m-5" style={{ width: '18rem' }}>
+                        <Card.Img variant="top" src="../../coaching.png" />
+                        <Card.Body>
+                            <Card.Title>Coaching skills</Card.Title>
+                            <Card.Text>
+                                Some quick example text to build on the card title and make up the
+                                bulk of the card's content.
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+
+                    <Card className="d-inline-flex m-5" style={{ width: '18rem' }}>
+                        <Card.Img variant="top" src="../../coaching.png" />
+                        <Card.Body>
+                            <Card.Title>Coaching skills</Card.Title>
+                            <Card.Text>
+                                Some quick example text to build on the card title and make up the
+                                bulk of the card's content.
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+                </Container>
+                {/* <div class="text-left">
+                    <h2>Experience</h2>
+                </div> */}
+
+                {/*             
                 <Row>
                     <Col sm={4} style={colstyle}>
                     12/2022 - 09/2023<br/>
@@ -241,8 +293,8 @@ function Resume(){
                     <Col sm={8} style={colstyle}>
                         Safeguarding in Education, Prevent Awareness.
                     </Col>
-                </Row>
-            
+                </Row> */}
+
 
             </Container>
         </>

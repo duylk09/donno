@@ -14,7 +14,7 @@ export default function Project1(){
     return(
         <>
             <Navigationbar/>
-            <Container>
+            <Container className="py-5">
             {/* Select box: Year */}
             <div>
                 <h3>Applications for entry clearance visas, by occupation and industry, 2021 to 2024 Q1</h3>
