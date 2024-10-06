@@ -26,10 +26,17 @@ const BarChart = (props) => {
     labels: props.years, // X-axis labels
     datasets: [
       {
-        label: '',
+        label: 'Applications for Entry Clearance Visas',
         data: props.applications, // Y-axis data
         backgroundColor: 'rgba(75, 192, 192, 0.6)', // Bar color
         borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 1,
+      },
+      {
+        label: 'Grants of Entry Clearance Visas', // Label for grants dataset
+        data: props.grants, // Y-axis data for grants
+        backgroundColor: 'rgba(153, 102, 255, 0.6)', // Bar color for grants
+        borderColor: 'rgba(153, 102, 255, 1)',
         borderWidth: 1,
       },
     ],
@@ -44,7 +51,12 @@ const BarChart = (props) => {
       },
       title: {
         display: true,
-        text: 'Monthly Sales Data', // Title of the chart
+        text: 'Entry clearance visas: Applications and Grants', // Title of the chart
+      },
+    },
+    scales: {
+      y: {
+        beginAtZero: true, // Start y-axis at 0
       },
     },
   };
