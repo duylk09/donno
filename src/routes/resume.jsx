@@ -14,21 +14,24 @@ function Resume() {
             <Navigationbar />
             <Container className="py-5 px-5">
                 <div className="text-center mb-5">
-                    <h1>Resume</h1>
+                    <h1 className="display-5 fw-bolder mb-0"><span className="text-gradient d-inline">Resume</span></h1>
                 </div>
                 <div className="mb-4 text-center">
                     <a className="mb-5" href={resumeFile} download>
                         <Button variant="primary">Download Resume</Button>
                     </a>
                 </div>
-                <Container>
+                <Container className="py-5">
+                    <div className="text-center mb-5">
+                        <h1 className="display-5 fw-bolder mb-0"><span className="text-gradient d-inline">Skills</span></h1>
+                    </div>
                     <Card className="d-inline-flex m-5" style={{ width: '18rem' }}>
                         <Card.Img variant="top" src="../../coaching.png" />
                         <Card.Body>
-                            <Card.Title>Coaching skills</Card.Title>
+                            <Card.Title>Programming</Card.Title>
                             <Card.Text>
-                                Some quick example text to build on the card title and make up the
-                                bulk of the card's content.
+                                BE in Computer Science.
+                                Experienced with Python, Javascript, React, html, css
                             </Card.Text>
                         </Card.Body>
                     </Card>
@@ -36,10 +39,9 @@ function Resume() {
                     <Card className="d-inline-flex m-5" style={{ width: '18rem' }}>
                         <Card.Img variant="top" src="../../coaching.png" />
                         <Card.Body>
-                            <Card.Title>Coaching skills</Card.Title>
+                            <Card.Title>Coaching</Card.Title>
                             <Card.Text>
-                                Some quick example text to build on the card title and make up the
-                                bulk of the card's content.
+                                Successfully advanced 50% of staff to senior and management roles through targeted coaching and development initiatives
                             </Card.Text>
                         </Card.Body>
                     </Card>
@@ -47,10 +49,9 @@ function Resume() {
                     <Card className="d-inline-flex m-5" style={{ width: '18rem' }}>
                         <Card.Img variant="top" src="../../coaching.png" />
                         <Card.Body>
-                            <Card.Title>Coaching skills</Card.Title>
+                            <Card.Title>Communication</Card.Title>
                             <Card.Text>
-                                Some quick example text to build on the card title and make up the
-                                bulk of the card's content.
+                                Possess strong communication skills rooted in active listening, empathy, constructive feedback delivery, transparency, honesty, and patience, enabling me to foster collaboration and trust in any team environment.
                             </Card.Text>
                         </Card.Body>
                     </Card>
@@ -58,10 +59,9 @@ function Resume() {
                     <Card className="d-inline-flex m-5" style={{ width: '18rem' }}>
                         <Card.Img variant="top" src="../../coaching.png" />
                         <Card.Body>
-                            <Card.Title>Coaching skills</Card.Title>
+                            <Card.Title>Project Management</Card.Title>
                             <Card.Text>
-                                Some quick example text to build on the card title and make up the
-                                bulk of the card's content.
+                                Experienced with managing multi projects with strick deadlines. 
                             </Card.Text>
                         </Card.Body>
                     </Card>

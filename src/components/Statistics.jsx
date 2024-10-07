@@ -28,6 +28,7 @@ export default function Statistics(props) {
     const [occupation, setOccupation] = useState("");
 
     const [applications, setApplications] = useState([]);
+    const [grants, setGrants] = useState([]);
 
     function getSelectedValue(selectedYear, selectedNationality, selectedOccupation, selectedIndustry) {
 
@@ -37,7 +38,8 @@ export default function Statistics(props) {
         // const selectedOccupation = document.getElementById(`occupation-${id}`).value;
 
 
-        let result = []
+        let sumApplications = [];
+        let sumGrants = [];
         for (let year of years) {
             const filteredData = parsedData.filter(item => {
                 const matchesYear = item[0] == year;
@@ -47,12 +49,18 @@ export default function Statistics(props) {
 
                 return matchesYear && matchesNationality && matchesIndustry && matchesOccupation;
             });
-            const sumValue = filteredData.reduce((acc, item) => acc + item[5], 0);
-            result.push(sumValue)
+            const sumValueApp = filteredData.reduce((acc, item) => acc + item[5], 0);
+            sumApplications.push(sumValueApp);
+            const sumValueGrants = filteredData.reduce((acc,item) => acc + item[6], 0);
+            sumGrants.push(sumValueGrants);
+
         }
 
-        if (result != applications) {
-            setApplications(result);
+        if (sumApplications != applications) {
+            setApplications(sumApplications);
+        }
+        if (sumGrants != grants){
+            setGrants(sumGrants);
         }
 
     };
@@ -145,7 +153,7 @@ export default function Statistics(props) {
             </div>
             {/* <Button variant="primary" onClick={getSelectedValue}>Search</Button> */}
             {/* <div>Result: {applications.toString()}</div> */}
-            <BarChart years={years} applications={applications} />
+            <BarChart years={years} applications={applications} grants={grants}/>
 
 
         </>

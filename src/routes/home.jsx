@@ -11,7 +11,7 @@ function Home() {
       <Navigationbar />
       <Container className="py-5">
         <div className="col-xxl-5">
-          <div className="text-center text-xxl-start">
+          <div className="text-center text-xxl-center align-items-center d-flex flex-column justify-content-center">
             <div className="badge bg-gradient-primary-to-secondary text-white mb-4"><div className="text-uppercase">Education &middot; Leadership &middot; Website Development</div></div>
             <div className="fs-3 fw-light text-muted">I can help your business to</div>
             <h1 className="display-3 fw-bolder mb-5"><span className="text-gradient d-inline">Get online and grow fast</span></h1>
@@ -36,9 +36,9 @@ function Home() {
             individuals' educational journeys, with a keen aspiration to further my professional growth as an educator.
           </p>
         </div>
-        
+
       </Container>
-      <Footer/>
+      <Footer />
     </>
   )
 }
