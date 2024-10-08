@@ -1,8 +1,6 @@
-import Navigationbar from "../components/Navigationbar";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Button } from "react-bootstrap";
 import BarChart from "./BarChart";
 
 import React, { useEffect, useState, useId } from "react";
@@ -32,12 +30,6 @@ export default function Statistics(props) {
 
     function getSelectedValue(selectedYear, selectedNationality, selectedOccupation, selectedIndustry) {
 
-        // const selectedYear = document.getElementById(`year-${id}`).value;
-        // const selectedNationality = document.getElementById(`nationality-${id}`).value;
-        // const selectedIndustry = document.getElementById(`industry-${id}`).value;
-        // const selectedOccupation = document.getElementById(`occupation-${id}`).value;
-
-
         let sumApplications = [];
         let sumGrants = [];
         for (let year of years) {
@@ -51,7 +43,7 @@ export default function Statistics(props) {
             });
             const sumValueApp = filteredData.reduce((acc, item) => acc + item[5], 0);
             sumApplications.push(sumValueApp);
-            const sumValueGrants = filteredData.reduce((acc,item) => acc + item[6], 0);
+            const sumValueGrants = filteredData.reduce((acc, item) => acc + item[6], 0);
             sumGrants.push(sumValueGrants);
 
         }
@@ -59,7 +51,7 @@ export default function Statistics(props) {
         if (sumApplications != applications) {
             setApplications(sumApplications);
         }
-        if (sumGrants != grants){
+        if (sumGrants != grants) {
             setGrants(sumGrants);
         }
 
@@ -116,44 +108,55 @@ export default function Statistics(props) {
 
     return (
         <>
+            <Container>
+                <Row>
+                    {/* Select box: Nationality */}
+                    <Col xs={2}>
+                        <label htmlFor="nationality">Select Nationality:</label>
+                    </Col>
+                    <Col>
+                        <select id={`nationality-${id}`} name="nationality" defaultValue="" onChange={(e) => handleNationalityChange(e)}>
+                            <option key="default" value=""></option>
+                            {nationalities.map((nationality, index) => (
+                                <option key={index} value={nationality}>
+                                    {nationality}
+                                </option>
+                            ))}
+                        </select>
+                    </Col>
+                </Row>
+                <Row>
+                    {/* Select box: Industy */}
+                    <Col xs={2}>
+                        <label htmlFor="industry">Select Industry:</label>
+                    </Col>
+                    <Col>
+                        <select id={`industry-${id}`} name="industry" defaultValue="" onChange={(e) => handleIndustryChange(e)}>
+                            <option key="default" value=""></option>
+                            {industries.map((industry, index) => (
+                                <option key={index} value={industry}>
+                                    {industry}
+                                </option>
+                            ))}
+                        </select>
+                    </Col>
+                </Row>
+                <Row>
+                    {/* Select box: Occupations */}                    
+                    <Col xs={2}>
+                        <label htmlFor="occupation">Select Occupations:</label>
+                    </Col>
+                    <Col>
+                        <select id={`occupation-${id}`} name="occupation" defaultValue="" onChange={(event) => handleOccupationChange(event)}>
+                            <option key="default" value=""></option>
+                            {occupations.map(newLocal)}
+                        </select>
+                    </Col>
+                </Row>
 
-            {/* Select box: Nationality */}
-            <div>
-                <label htmlFor="nationality">Select Nationality:</label>
-                <select id={`nationality-${id}`} name="nationality" defaultValue="" onChange={(e) => handleNationalityChange(e)}>
-                    <option key="default" value=""></option>
-                    {nationalities.map((nationality, index) => (
-                        <option key={index} value={nationality}>
-                            {nationality}
-                        </option>
-                    ))}
-                </select>
-            </div>
+            </Container>
 
-            {/* Select box: Industy */}
-            <div>
-                <label htmlFor="industry">Select Industry:</label>
-                <select id={`industry-${id}`} name="industry" defaultValue="" onChange={(e) => handleIndustryChange(e)}>
-                    <option key="default" value=""></option>
-                    {industries.map((industry, index) => (
-                        <option key={index} value={industry}>
-                            {industry}
-                        </option>
-                    ))}
-                </select>
-            </div>
-
-            {/* Select box: Occupations */}
-            <div>
-                <label htmlFor="occupation">Select Occupations:</label>
-                <select id={`occupation-${id}`} name="occupation" defaultValue="" onChange={(event) => handleOccupationChange(event)}>
-                    <option key="default" value=""></option>
-                    {occupations.map(newLocal)}
-                </select>
-            </div>
-            {/* <Button variant="primary" onClick={getSelectedValue}>Search</Button> */}
-            {/* <div>Result: {applications.toString()}</div> */}
-            <BarChart years={years} applications={applications} grants={grants}/>
+            <BarChart years={years} applications={applications} grants={grants} />
 
 
         </>

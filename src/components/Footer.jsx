@@ -2,15 +2,17 @@ import { Nav, Image } from "react-bootstrap"
 function Footer() {
     return (
 
-        <Nav className="bg-body-tertiary navbar navbar-expand-lg bg-white py-3 justify-content-center">
+        <Nav className="bg-body-tertiary navbar navbar-expand-lg bg-white py-3 justify-content-center fs-2">
+ 
+
             <Nav.Item>
-                <Nav.Link href="/home"><Image src="../../home.png" style={{ width: '48px', height: '48px' }} rounded /></Nav.Link>
+                <Nav.Link className="text-gradient" href="https://www.linkedin.com/in/duykhacle/"><i className="bi bi-linkedin"></i></Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link href="https://www.linkedin.com/in/duykhacle/"><Image src="../../linkedin.png" style={{ width: '42px', height: '42px' }} rounded /></Nav.Link>
+                <Nav.Link className="text-gradient" href="https://www.youtube.com/\@Donno_dunno"><i className="bi bi-youtube"></i></Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link href="https://www.youtube.com/@Donno_dunno"><Image src="../../youtube.png" style={{ width: '46px', height: '46px' }} rounded /></Nav.Link>
+                <Nav.Link className="text-gradient" href="https://github.com/duylk09"><i className="bi bi-github"></i></Nav.Link>
             </Nav.Item>
 
         </Nav>

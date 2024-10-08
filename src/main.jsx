@@ -1,14 +1,17 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
+import Root from './routes/root.jsx'
 import Home from './routes/home.jsx'
 import Resume from './routes/resume.jsx'
 import Project1 from './routes/project1.jsx';
 
 
 //import './index.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.css';
 import './index.css'
+import 'bootstrap-icons/font/bootstrap-icons.css'
+
 import {
   createHashRouter,
   RouterProvider,
@@ -17,16 +20,25 @@ import {
 const router = createHashRouter([
   {
     path: '/',
-    element: <Home/>
+    element: <Root/>,
+    children: [
+      {
+        path: '/',
+        element: <Home/>
+        
+      },
+      {
+        path: 'resume',
+        element: <Resume/>
+      },
+      {
+        path: 'project1',
+        element: <Project1/>
+      }
+    ]
   },
-  {
-    path: 'resume',
-    element: <Resume/>
-  },
-  {
-    path: 'project1',
-    element: <Project1/>
-  }
+
+
 ], //{basename: "/donno"}
 );
 
