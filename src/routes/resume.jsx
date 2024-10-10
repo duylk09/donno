@@ -11,60 +11,74 @@ function Resume() {
 
     return (
         <>
-            <Container className="py-5 px-5">
-                <div className="text-center mb-5">
-                    <h1 className="display-5 fw-bolder mb-0"><span className="text-gradient d-inline">Resume</span></h1>
-                </div>
-                <div className="mb-4 text-center">
-                    <a className="mb-5" href={resumeFile} download>
-                        <Button variant="primary">Download Resume</Button>
-                    </a>
-                </div>
-                <Container className="py-5">
-                    <div className="text-center mb-5">
-                        <h1 className="display-5 fw-bolder mb-0"><span className="text-gradient d-inline">Skills</span></h1>
-                    </div>
-                    <Card className="d-inline-flex m-5" style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src="../../coaching.png" />
-                        <Card.Body>
-                            <Card.Title>Programming</Card.Title>
-                            <Card.Text>
-                                BE in Computer Science.
-                                Experienced with Python, Javascript, React, html, css
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
+            <Container className="px-5 my-5">
+                <Row className="gx-5 justify-content-center">
+                    <Col className="col-lg-11 col-xl-9 col-xxl-8">
+                        <div className="text-center mb-5">
+                            <h1 className="display-5 fw-bolder mb-0"><span className="text-gradient d-inline">Resume</span></h1>
+                        </div>
+                        <div className="mb-4 text-center">
+                            <a className="mb-5" href={resumeFile} download>
+                                <Button variant="primary">Download Resume</Button>
+                            </a>
+                        </div>
+                        <Container className="py-5">
+                   
+                            <Card className="p-5 card-body card shadow border-0 rounded-4" >
+                                <Card.Body className="">
+                                    <Card.Title className="align-items-center mb-4">
+                                        <h3 className="fw-bolder mb-0">
+                                            <div className="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">
+                                                <i className="bi bi-tools"></i>
+                                            </div>
 
-                    <Card className="d-inline-flex m-5" style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src="../../coaching.png" />
-                        <Card.Body>
-                            <Card.Title>Coaching</Card.Title>
-                            <Card.Text>
-                                Successfully advanced 50% of staff to senior and management roles through targeted coaching and development initiatives
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
+                                            <span className="text-gradient d-inline">Professional skills</span>
+                                        </h3>
+                                    </Card.Title>
+                                    <Container>
+                                        <Row className="row-cols-md-3 mb-4 ">
+                                            <Col className="mb-4 mb-md-0"><Container className="d-flex align-items-center bg-light rounded-4 p-3 h-100">Programming</Container></Col>
+                                            <Col><Container className="d-flex align-items-center bg-light rounded-4 p-3 h-100">Communication</Container></Col>
+                                            <Col><Container className="d-flex align-items-center bg-light rounded-4 p-3 h-100">Problem-solving</Container></Col>
+                                        </Row>
+                                        <Row className="row-cols-md-3 mb-4">
+                                            <Col className="mb-4 mb-md-0 "><Container className="d-flex align-items-center bg-light rounded-4 p-3 h-100">Teamwork</Container></Col>
+                                            <Col><Container className="d-flex align-items-center bg-light rounded-4 p-3 h-100">Adaptability</Container></Col>
+                                            <Col><Container className="d-flex align-items-center bg-light rounded-4 p-3 h-100">Time Management</Container></Col>
+                                        </Row>
+                                        <Row className="row-cols-md-3 mb-4">
+                                            <Col className="mb-4 mb-md-0 "><Container className="d-flex align-items-center bg-light rounded-4 p-3 h-100">Creativity</Container></Col>
+                                            <Col><Container className="d-flex align-items-center bg-light rounded-4 p-3 h-100">Empathy</Container></Col>
+                                            <Col><Container className="d-flex align-items-center bg-light rounded-4 p-3 h-100">Patience</Container></Col>
+                                        </Row>
+                                    </Container>
+                                    <Card.Title className="align-items-center mb-4 pt-3">
+                                        <h3 className="fw-bolder mb-0">
+                                            <div className="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">
+                                                <i class="bi bi-code-slash"></i>
+                                            </div>
+                                            <span className="text-gradient d-inline">Languages</span>
+                                        </h3>
+                                    </Card.Title>
+                                    <Container>
+                                        <Row className="row-cols-md-3 mb-4">
+                                            <Col className="mb-4 mb-md-0"><Container className="d-flex align-items-center bg-light rounded-4 p-3 h-100">HTML/CSS</Container></Col>
+                                            <Col><Container className="d-flex align-items-center bg-light rounded-4 p-3 h-100">Javascript</Container></Col>
+                                            <Col><Container className="d-flex align-items-center bg-light rounded-4 p-3 h-100">Python</Container></Col>
+                                        </Row>
+                                    </Container>
+                    
+                                </Card.Body>
+                            </Card>
 
-                    <Card className="d-inline-flex m-5" style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src="../../coaching.png" />
-                        <Card.Body>
-                            <Card.Title>Communication</Card.Title>
-                            <Card.Text>
-                                Possess strong communication skills rooted in active listening, empathy, constructive feedback delivery, transparency, honesty, and patience, enabling me to foster collaboration and trust in any team environment.
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
+                           
+                        </Container>
 
-                    <Card className="d-inline-flex m-5" style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src="../../coaching.png" />
-                        <Card.Body>
-                            <Card.Title>Project Management</Card.Title>
-                            <Card.Text>
-                                Experienced with managing multi projects with strick deadlines. 
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
-                </Container>
+                    </Col>
+                </Row>
+
+
+
             </Container>
         </>
 
