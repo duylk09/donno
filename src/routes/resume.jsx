@@ -37,9 +37,9 @@ function Resume() {
                                     </Card.Title>
                                     <Container>
                                         <Row className="row-cols-md-3 mb-4 ">
-                                            <Col className="mb-4 mb-md-0"><Container className="d-flex align-items-center bg-light rounded-4 p-3 h-100">Programming</Container></Col>
-                                            <Col><Container className="d-flex align-items-center bg-light rounded-4 p-3 h-100">Communication</Container></Col>
-                                            <Col><Container className="d-flex align-items-center bg-light rounded-4 p-3 h-100">Problem-solving</Container></Col>
+                                            <Col className="col-sm-12 mb-4"><Container className="d-flex align-items-center bg-light rounded-4 p-3 h-100">Programming</Container></Col>
+                                            <Col className="col-sm-12 mb-4"><Container className="d-flex align-items-center bg-light rounded-4 p-3 h-100">Communication</Container></Col>
+                                            <Col  className="col-sm-12 mb-4"><Container className="d-flex align-items-center bg-light rounded-4 p-3 h-100">Problem-solving</Container></Col>
                                         </Row>
                                         <Row className="row-cols-md-3 mb-4">
                                             <Col className="mb-4 mb-md-0 "><Container className="d-flex align-items-center bg-light rounded-4 p-3 h-100">Teamwork</Container></Col>

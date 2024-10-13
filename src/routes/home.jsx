@@ -6,8 +6,8 @@ function Home() {
   return (
     <>
       <Container className="pt-5">
-        <div className="col-xxl-5">
-          <div className="text-center text-xxl-center align-items-center d-flex flex-column justify-content-center">
+        <div>
+          <div className="text-center align-items-center d-flex flex-column justify-content-center pb-5">
             <div className="badge bg-gradient-primary-to-secondary text-white mb-4"><div className="text-uppercase">Development &middot; Leadership &middot; Education</div></div>
             <div className="fs-3 fw-light text-muted">Innovative problem-solver transitioning to</div>
             <h1 className="display-3 fw-bolder mb-5"><span className="text-gradient d-inline">Front-end development</span></h1>
@@ -17,12 +17,14 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className="d-flex justify-content-center mt-5 mt-xxl-0">
+        <div className="d-flex justify-content-center mt-5 pt-5">
           <div className="profile bg-gradient-primary-to-secondary">
             <img src={profilePic} className="profile-img" />
           </div>
         </div>
-        <Container className="pt-5 pb-3 px-5">
+
+      </Container>
+      <Container className="pt-5 pb-3 px-5">
           <div className="text-center">
             <h2 className="display-5 fw-bolder">
               <span className="text-gradient d-inline">About me</span>
@@ -42,7 +44,6 @@ function Home() {
             
           </div>
         </Container>
-      </Container>
     </>
   )
 }
