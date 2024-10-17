@@ -16,9 +16,9 @@ function Navigationbar() {
                         <Nav className="ms-auto mb-2 mb-lg-0 fw-bolder" >
                             <NavLink className="nav-link nav-item" to="/">Home</NavLink>
                             <NavLink className="nav-link nav-item" to="/resume">Resume</NavLink>
-                            <NavDropdown title="Project" id="basic-nav-dropdown">
-                                <NavDropdown.Item>
-                                    <NavLink className="nav-link" to="/project1">SW Visa Stats</NavLink>
+                            <NavDropdown title="Projects" id="basic-nav-dropdown" className="dropdown-menu-end">
+                                <NavDropdown.Item >
+                                    <NavLink className="nav-link" to="/project1">UK Skilled Worker Visa Statistics</NavLink>
                                 </NavDropdown.Item>
                                 {/* <NavDropdown.Item href="#action/3.2">Project 2</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.3">Project 3</NavDropdown.Item>
