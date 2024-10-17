@@ -4,6 +4,7 @@ import Col from 'react-bootstrap/Col';
 import BarChart from "./BarChart";
 
 import React, { useEffect, useState, useId } from "react";
+import { FormSelect } from 'react-bootstrap';
 
 function newLocal(occupation, index) {
     return <option key={index} value={occupation}>
@@ -111,12 +112,13 @@ export default function Statistics(props) {
             <Container>
                 <Row>
                     {/* Select box: Nationality */}
-                    <Col xs={2}>
+                    <Col xs={3}>
                         <label htmlFor="nationality">Select Nationality:</label>
                     </Col>
                     <Col>
-                        <select id={`nationality-${id}`} name="nationality" defaultValue="" onChange={(e) => handleNationalityChange(e)}>
-                            <option key="default" value=""></option>
+                        
+                        <select className="form-select" id={`nationality-${id}`} name="nationality" defaultValue="" onChange={(e) => handleNationalityChange(e)}>
+                            <option key="default" value="">Select All</option>
                             {nationalities.map((nationality, index) => (
                                 <option key={index} value={nationality}>
                                     {nationality}
@@ -127,12 +129,12 @@ export default function Statistics(props) {
                 </Row>
                 <Row>
                     {/* Select box: Industy */}
-                    <Col xs={2}>
+                    <Col xs={3}>
                         <label htmlFor="industry">Select Industry:</label>
                     </Col>
                     <Col>
-                        <select id={`industry-${id}`} name="industry" defaultValue="" onChange={(e) => handleIndustryChange(e)}>
-                            <option key="default" value=""></option>
+                        <select className="form-select" id={`industry-${id}`} name="industry" defaultValue="" onChange={(e) => handleIndustryChange(e)}>
+                            <option key="default" value="">Select All</option>
                             {industries.map((industry, index) => (
                                 <option key={index} value={industry}>
                                     {industry}
@@ -143,12 +145,12 @@ export default function Statistics(props) {
                 </Row>
                 <Row>
                     {/* Select box: Occupations */}                    
-                    <Col xs={2}>
+                    <Col xs={3}>
                         <label htmlFor="occupation">Select Occupations:</label>
                     </Col>
                     <Col>
-                        <select id={`occupation-${id}`} name="occupation" defaultValue="" onChange={(event) => handleOccupationChange(event)}>
-                            <option key="default" value=""></option>
+                        <select className="form-select" id={`occupation-${id}`} name="occupation" defaultValue="" onChange={(event) => handleOccupationChange(event)}>
+                            <option key="default" value="">Select All</option>
                             {occupations.map(newLocal)}
                         </select>
                     </Col>

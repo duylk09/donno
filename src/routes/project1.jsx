@@ -13,7 +13,7 @@ export default function Project1() {
                         {/* Add title Project 1  */}
                         <Container className='text-center'>
                             <h1 className="display-5 fw-bolder mb-4">
-                                <span className="text-gradient d-inline">Project 1</span>
+                                <span className="text-gradient d-inline">Skilled Worker Visa Statistics</span>
                             </h1>
                         </Container>
 

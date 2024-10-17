@@ -18,7 +18,7 @@ function Navigationbar() {
                             <NavLink className="nav-link nav-item" to="/resume">Resume</NavLink>
                             <NavDropdown title="Project" id="basic-nav-dropdown">
                                 <NavDropdown.Item>
-                                    <NavLink className="nav-link" to="/project1">Project 1</NavLink>
+                                    <NavLink className="nav-link" to="/project1">SW Visa Stats</NavLink>
                                 </NavDropdown.Item>
                                 {/* <NavDropdown.Item href="#action/3.2">Project 2</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.3">Project 3</NavDropdown.Item>
