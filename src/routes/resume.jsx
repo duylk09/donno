@@ -63,7 +63,7 @@ function Resume() {
                                     <Container>
                                         <Row className="row-cols-md-3 mb-4">
                                             <Col className="col-12 mb-4"><Container className=" align-items-center bg-light rounded-4 p-3 h-100">HTML/CSS</Container></Col>
-                                            <Col className="col-12 mb-4"><Container className=" align-items-center bg-light rounded-4 p-3 h-100">Javascript</Container></Col>
+                                            <Col className="col-12 mb-4"><Container className=" align-items-center bg-light rounded-4 p-3 h-100">JavaScript</Container></Col>
                                             <Col className="col-12 mb-4"><Container className="d-flex align-items-center bg-light rounded-4 p-3 h-100">Python</Container></Col>
                                         </Row>
                                     </Container>

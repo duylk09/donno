@@ -105,19 +105,19 @@ export default function Statistics(props) {
 
     useEffect(() => {
         getSelectedValue(year, nationality, occupation, industry);
-    }, [year, nationality, occupation, industry])
+    })
 
     return (
         <>
             <Container>
-                <Row>
+                <Row className='py-2'>
                     {/* Select box: Nationality */}
-                    <Col xs={3}>
+                    <Col xs={2} className='d-flex align-items-center'>
                         <label htmlFor="nationality">Select Nationality:</label>
                     </Col>
                     <Col>
                         
-                        <select className="form-select" id={`nationality-${id}`} name="nationality" defaultValue="" onChange={(e) => handleNationalityChange(e)}>
+                        <select className="form-select" id="nationality" name="nationality" defaultValue="" onChange={(e) => handleNationalityChange(e)}>
                             <option key="default" value="">Select All</option>
                             {nationalities.map((nationality, index) => (
                                 <option key={index} value={nationality}>
@@ -129,11 +129,11 @@ export default function Statistics(props) {
                 </Row>
                 <Row>
                     {/* Select box: Industy */}
-                    <Col xs={3}>
+                    <Col xs={2} className='d-flex align-items-center'>
                         <label htmlFor="industry">Select Industry:</label>
                     </Col>
                     <Col>
-                        <select className="form-select" id={`industry-${id}`} name="industry" defaultValue="" onChange={(e) => handleIndustryChange(e)}>
+                        <select className="form-select" id="industry" name="industry" defaultValue="" onChange={(e) => handleIndustryChange(e)}>
                             <option key="default" value="">Select All</option>
                             {industries.map((industry, index) => (
                                 <option key={index} value={industry}>
@@ -143,13 +143,13 @@ export default function Statistics(props) {
                         </select>
                     </Col>
                 </Row>
-                <Row>
+                <Row className='py-2'>
                     {/* Select box: Occupations */}                    
-                    <Col xs={3}>
+                    <Col xs={2} className='d-flex align-items-center'>
                         <label htmlFor="occupation">Select Occupations:</label>
                     </Col>
                     <Col>
-                        <select className="form-select" id={`occupation-${id}`} name="occupation" defaultValue="" onChange={(event) => handleOccupationChange(event)}>
+                        <select className="form-select" id="occupation" name="occupation" defaultValue="" onChange={(event) => handleOccupationChange(event)}>
                             <option key="default" value="">Select All</option>
                             {occupations.map(newLocal)}
                         </select>
