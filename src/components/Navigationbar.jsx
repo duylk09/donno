@@ -16,11 +16,8 @@ function Navigationbar() {
                         <Nav className="ms-auto mb-2 mb-lg-0 fw-bolder" >
                             <NavLink className="nav-link nav-item" to="/">Home</NavLink>
                             <NavLink className="nav-link nav-item" to="/resume">Resume</NavLink>
-                            <NavDropdown title="Projects" id="basic-nav-dropdown" className="dropdown-menu-end custom-dropdown-item">
-                                <NavDropdown.Item >
-                                    <NavLink className="nav-link"  to="/visa_stats">UK Skilled Worker Visa Statistics</NavLink>
-                                </NavDropdown.Item>
-            
+                            <NavDropdown title="Projects" id="basic-nav-dropdown" className="dropdown-menu-end">
+                                    <NavLink className="dropdown-item"  to="/visa_stats">UK Skilled Worker Visa Statistics</NavLink>
                             </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>

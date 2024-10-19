@@ -22,6 +22,7 @@ ChartJS.register(
 
 const BarChart = (props) => {
   // Data for the chart
+  console.log(props)
   const data = {
     labels: props.years, // X-axis labels
     datasets: [

@@ -14,12 +14,12 @@ export default function Statistics(props) {
     const parsedData = JSON.parse(props.jsonData);
 
     const [searchParams, setSearchParams] = useSearchParams();
-    const location = useLocation();
+    // const location = useLocation();
 
-    const paramNationality = new URLSearchParams(location.search).get('nationality') || '';
-    const paramIndustry = new URLSearchParams(location.search).get('industry') || '';
-    const paramOccupation = new URLSearchParams(location.search).get('occupation') || '';
-    
+    const paramNationality = searchParams.get('nationality') || '';
+    const paramIndustry = searchParams.get('industry') || '';
+    const paramOccupation = searchParams.get('occupation') || '';
+
 
     const [nationalities, setNationalities] = useState([]);
     const [years, setYears] = useState([]);
@@ -27,15 +27,16 @@ export default function Statistics(props) {
     const [occupations, setOccupations] = useState([]);
 
     const [year, setYear] = useState("");
-    const [nationality, setNationality] = useState("");
-    const [industry, setIndustry] = useState("");
-    const [occupation, setOccupation] = useState("");
+    const [nationality, setNationality] = useState(paramNationality);
+    const [industry, setIndustry] = useState(paramIndustry);
+    const [occupation, setOccupation] = useState(paramOccupation);
+
+    console.log(nationality)
 
     const [applications, setApplications] = useState([]);
     const [grants, setGrants] = useState([]);
 
-    function getSelectedValue(selectedYear, selectedNationality, selectedOccupation, selectedIndustry) {
-
+    function updateChartData(selectedNationality, selectedOccupation, selectedIndustry) {
         let sumApplications = [];
         let sumGrants = [];
         for (let year of years) {
@@ -64,17 +65,12 @@ export default function Statistics(props) {
     };
 
 
-
-    // function handleYearChange(event) {
-    //     setYear(event.target.value);
-    // }
-
     function handleNationalityChange(event) {
-        setNationality(event.target.value);
-        
+        // setNationality(event.target.value);
+
 
         // Update a specific query parameter
-        setSearchParams({ 
+        setSearchParams({
             nationality: event.target.value || '',
             industry: paramIndustry || '',
             occupation: paramOccupation || ''
@@ -83,9 +79,9 @@ export default function Statistics(props) {
     }
 
     function handleIndustryChange(event) {
-        setIndustry(event.target.value);
+        // setIndustry(event.target.value);
 
-        setSearchParams({ 
+        setSearchParams({
             nationality: paramNationality || '',
             industry: event.target.value || '',
             occupation: paramOccupation || ''
@@ -93,53 +89,42 @@ export default function Statistics(props) {
         });
     }
 
-    function handleOccupationChange(event) {
-        setOccupation(event.target.value);
-        // getSelectedValue();
+    function handleParameterChange(param, event) {
+        // setOccupation(event.target.value);
 
-        setSearchParams({ 
-            nationality: paramNationality || '',
-            industry: paramIndustry || '',
-            occupation: event.target.value || ''
-        });
+        let search = new URLSearchParams(searchParams)
+        search.set(param, event.target.value)
+        setSearchParams(search);
     }
 
     useEffect(() => {
 
-        if (Array.isArray(parsedData)) {
-            //Nationality data for select box
-            const uniqueNationalities = [...new Set(parsedData.map(item => item[2]))];
-            setNationalities(uniqueNationalities);
-            uniqueNationalities.sort();
+        //Nationality data for select box
+        const uniqueNationalities = [...new Set(parsedData.map(item => item[2]))];
+        setNationalities(uniqueNationalities);
+        uniqueNationalities.sort();
 
-            //Year data for select box
-            const uniqueYears = [...new Set(parsedData.map(item => item[0]))];
-            setYears(uniqueYears);
-            uniqueYears.sort();
+        //Year data for select box
+        const uniqueYears = [...new Set(parsedData.map(item => item[0]))];
+        setYears(uniqueYears);
+        uniqueYears.sort();
 
-            //Industry data for select box
-            const uniqueIndustries = [...new Set(parsedData.map(item => item[4]))];
-            setIndustries(uniqueIndustries);
-            uniqueIndustries.sort();
+        //Industry data for select box
+        const uniqueIndustries = [...new Set(parsedData.map(item => item[4]))];
+        setIndustries(uniqueIndustries);
+        uniqueIndustries.sort();
 
-            //Occupation data for select box
-            const uniqueOccupations = [...new Set(parsedData.map(item => item[3].substring(7)))];
-            uniqueOccupations.sort();
-            setOccupations(uniqueOccupations);
-
-            // Trigger initial chart data calculation with default values
-            getSelectedValue("", paramNationality, paramOccupation, paramIndustry);
-
-        } else {
-            console.error("jsonData is not an array.");
-        }
+        //Occupation data for select box
+        const uniqueOccupations = [...new Set(parsedData.map(item => item[3].substring(7)))];
+        uniqueOccupations.sort();
+        setOccupations(uniqueOccupations);
     }, []);
-    
+
     useEffect(() => {
 
-        getSelectedValue(year, nationality, occupation, industry);
+        updateChartData(paramNationality, paramOccupation, paramIndustry);
 
-    }, [year, nationality, occupation, industry])
+    }, [paramNationality, paramOccupation, paramIndustry, nationalities]);
 
 
     return (
@@ -152,10 +137,10 @@ export default function Statistics(props) {
                     </Col>
                     <Col>
 
-                        <select className="form-select" id="nationality" name="nationality" defaultValue="" onChange={(e) => handleNationalityChange(e)}>
+                        <select className="form-select" id="nationality" value={paramNationality} name="nationality" onChange={(e) => handleParameterChange("nationality", e)}>
                             <option key="default" value="">Select All</option>
                             {nationalities.map((nationality, index) => (
-                                <option key={index} value={nationality} selected = {nationality === paramNationality}>
+                                <option key={index} value={nationality}>
                                     {nationality}
                                 </option>
                             ))}
@@ -168,10 +153,10 @@ export default function Statistics(props) {
                         <label htmlFor="industry">Select Industry:</label>
                     </Col>
                     <Col>
-                        <select className="form-select" id="industry" name="industry" defaultValue="" onChange={(e) => handleIndustryChange(e)}>
+                        <select className="form-select" id="industry" name="industry" value={paramIndustry} onChange={(e) => handleParameterChange("industry", e)}>
                             <option key="default" value="">Select All</option>
                             {industries.map((industry, index) => (
-                                <option key={index} value={industry} selected = {industry === paramIndustry}>
+                                <option key={index} value={industry}>
                                     {industry}
                                 </option>
                             ))}
@@ -184,10 +169,10 @@ export default function Statistics(props) {
                         <label htmlFor="occupation">Select Occupations:</label>
                     </Col>
                     <Col>
-                        <select className="form-select" id="occupation" name="occupation" defaultValue="" onChange={(event) => handleOccupationChange(event)}>
+                        <select className="form-select" id="occupation" name="occupation" value={paramOccupation} onChange={(e) =>  handleParameterChange("occupation", e)}>
                             <option key="default" value="">Select All</option>
                             {occupations.map((occupation, index) => (
-                                <option key={index} value={occupation} selected={occupation === paramOccupation}>
+                                <option key={index} value={occupation}>
                                     {occupation}
                                 </option>
                             ))}
