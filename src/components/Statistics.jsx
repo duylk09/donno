@@ -2,19 +2,24 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import BarChart from "./BarChart";
+import { useSearchParams, useLocation } from 'react-router-dom';
 
 import React, { useEffect, useState, useId } from "react";
-import { FormSelect } from 'react-bootstrap';
 
-function newLocal(occupation, index) {
-    return <option key={index} value={occupation}>
-        {occupation}
-    </option>
-}
+
+
 
 export default function Statistics(props) {
-    const id = useId();
+    //const id = useId();
     const parsedData = JSON.parse(props.jsonData);
+
+    const [searchParams, setSearchParams] = useSearchParams();
+    const location = useLocation();
+
+    const myParamNationality = new URLSearchParams(location.search).get('nationality') || '';
+    const myParamIndustry = new URLSearchParams(location.search).get('industry') || '';
+    const myParamOccupation = new URLSearchParams(location.search).get('occupation') || '';
+    
 
     const [nationalities, setNationalities] = useState([]);
     const [years, setYears] = useState([]);
@@ -58,21 +63,49 @@ export default function Statistics(props) {
 
     };
 
-    function handleYearChange(event) {
-        setYear(event.target.value);
-    }
+    useEffect(() => {
+
+        getSelectedValue(year, nationality, occupation, industry);
+
+    })
+
+    // function handleYearChange(event) {
+    //     setYear(event.target.value);
+    // }
 
     function handleNationalityChange(event) {
         setNationality(event.target.value);
+        
+
+        // Update a specific query parameter
+        setSearchParams({ 
+            nationality: event.target.value || '',
+            industry: myParamIndustry || '',
+            occupation: myParamOccupation || ''
+        });
+
     }
 
     function handleIndustryChange(event) {
         setIndustry(event.target.value);
+
+        setSearchParams({ 
+            nationality: myParamNationality || '',
+            industry: event.target.value || '',
+            occupation: myParamOccupation || ''
+
+        });
     }
 
     function handleOccupationChange(event) {
         setOccupation(event.target.value);
         // getSelectedValue();
+
+        setSearchParams({ 
+            nationality: myParamNationality || '',
+            industry: myParamIndustry || '',
+            occupation: event.target.value || ''
+        });
     }
 
     useEffect(() => {
@@ -103,9 +136,7 @@ export default function Statistics(props) {
         }
     }, []);
 
-    useEffect(() => {
-        getSelectedValue(year, nationality, occupation, industry);
-    })
+
 
     return (
         <>
@@ -116,11 +147,11 @@ export default function Statistics(props) {
                         <label htmlFor="nationality">Select Nationality:</label>
                     </Col>
                     <Col>
-                        
+
                         <select className="form-select" id="nationality" name="nationality" defaultValue="" onChange={(e) => handleNationalityChange(e)}>
                             <option key="default" value="">Select All</option>
                             {nationalities.map((nationality, index) => (
-                                <option key={index} value={nationality}>
+                                <option key={index} value={nationality} selected = {nationality === myParamNationality}>
                                     {nationality}
                                 </option>
                             ))}
@@ -136,7 +167,7 @@ export default function Statistics(props) {
                         <select className="form-select" id="industry" name="industry" defaultValue="" onChange={(e) => handleIndustryChange(e)}>
                             <option key="default" value="">Select All</option>
                             {industries.map((industry, index) => (
-                                <option key={index} value={industry}>
+                                <option key={index} value={industry} selected = {industry === myParamIndustry}>
                                     {industry}
                                 </option>
                             ))}
@@ -144,14 +175,18 @@ export default function Statistics(props) {
                     </Col>
                 </Row>
                 <Row className='py-2'>
-                    {/* Select box: Occupations */}                    
+                    {/* Select box: Occupations */}
                     <Col xs={2} className='d-flex align-items-center'>
                         <label htmlFor="occupation">Select Occupations:</label>
                     </Col>
                     <Col>
                         <select className="form-select" id="occupation" name="occupation" defaultValue="" onChange={(event) => handleOccupationChange(event)}>
                             <option key="default" value="">Select All</option>
-                            {occupations.map(newLocal)}
+                            {occupations.map((occupation, index) => (
+                                <option key={index} value={occupation} selected={occupation === myParamOccupation}>
+                                    {occupation}
+                                </option>
+                            ))}
                         </select>
                     </Col>
                 </Row>

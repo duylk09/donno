@@ -9,7 +9,7 @@ export default function VisaStats() {
         <>
             <Container className="py-5">
                 <Row className='gx-5 justify-content-center'>
-                    <Col className='col-lg-11 col-xl-11 col-xxl-8'>
+                    <Col className='col-lg-11 col-xl-11 col-xxl-11'>
                         <Container className='text-center'>
                             <h1 className="display-5 fw-bolder mb-4">
                                 <span className="text-gradient d-inline">UK Skilled Worker Visa Statistics</span>
