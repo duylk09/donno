@@ -16,9 +16,9 @@ export default function Statistics(props) {
     const [searchParams, setSearchParams] = useSearchParams();
     const location = useLocation();
 
-    const myParamNationality = new URLSearchParams(location.search).get('nationality') || '';
-    const myParamIndustry = new URLSearchParams(location.search).get('industry') || '';
-    const myParamOccupation = new URLSearchParams(location.search).get('occupation') || '';
+    const paramNationality = new URLSearchParams(location.search).get('nationality') || '';
+    const paramIndustry = new URLSearchParams(location.search).get('industry') || '';
+    const paramOccupation = new URLSearchParams(location.search).get('occupation') || '';
     
 
     const [nationalities, setNationalities] = useState([]);
@@ -63,11 +63,7 @@ export default function Statistics(props) {
 
     };
 
-    useEffect(() => {
 
-        getSelectedValue(year, nationality, occupation, industry);
-
-    })
 
     // function handleYearChange(event) {
     //     setYear(event.target.value);
@@ -80,8 +76,8 @@ export default function Statistics(props) {
         // Update a specific query parameter
         setSearchParams({ 
             nationality: event.target.value || '',
-            industry: myParamIndustry || '',
-            occupation: myParamOccupation || ''
+            industry: paramIndustry || '',
+            occupation: paramOccupation || ''
         });
 
     }
@@ -90,9 +86,9 @@ export default function Statistics(props) {
         setIndustry(event.target.value);
 
         setSearchParams({ 
-            nationality: myParamNationality || '',
+            nationality: paramNationality || '',
             industry: event.target.value || '',
-            occupation: myParamOccupation || ''
+            occupation: paramOccupation || ''
 
         });
     }
@@ -102,8 +98,8 @@ export default function Statistics(props) {
         // getSelectedValue();
 
         setSearchParams({ 
-            nationality: myParamNationality || '',
-            industry: myParamIndustry || '',
+            nationality: paramNationality || '',
+            industry: paramIndustry || '',
             occupation: event.target.value || ''
         });
     }
@@ -131,11 +127,19 @@ export default function Statistics(props) {
             uniqueOccupations.sort();
             setOccupations(uniqueOccupations);
 
+            // Trigger initial chart data calculation with default values
+            getSelectedValue("", paramNationality, paramOccupation, paramIndustry);
+
         } else {
             console.error("jsonData is not an array.");
         }
     }, []);
+    
+    useEffect(() => {
 
+        getSelectedValue(year, nationality, occupation, industry);
+
+    }, [year, nationality, occupation, industry])
 
 
     return (
@@ -151,7 +155,7 @@ export default function Statistics(props) {
                         <select className="form-select" id="nationality" name="nationality" defaultValue="" onChange={(e) => handleNationalityChange(e)}>
                             <option key="default" value="">Select All</option>
                             {nationalities.map((nationality, index) => (
-                                <option key={index} value={nationality} selected = {nationality === myParamNationality}>
+                                <option key={index} value={nationality} selected = {nationality === paramNationality}>
                                     {nationality}
                                 </option>
                             ))}
@@ -167,7 +171,7 @@ export default function Statistics(props) {
                         <select className="form-select" id="industry" name="industry" defaultValue="" onChange={(e) => handleIndustryChange(e)}>
                             <option key="default" value="">Select All</option>
                             {industries.map((industry, index) => (
-                                <option key={index} value={industry} selected = {industry === myParamIndustry}>
+                                <option key={index} value={industry} selected = {industry === paramIndustry}>
                                     {industry}
                                 </option>
                             ))}
@@ -183,7 +187,7 @@ export default function Statistics(props) {
                         <select className="form-select" id="occupation" name="occupation" defaultValue="" onChange={(event) => handleOccupationChange(event)}>
                             <option key="default" value="">Select All</option>
                             {occupations.map((occupation, index) => (
-                                <option key={index} value={occupation} selected={occupation === myParamOccupation}>
+                                <option key={index} value={occupation} selected={occupation === paramOccupation}>
                                     {occupation}
                                 </option>
                             ))}
