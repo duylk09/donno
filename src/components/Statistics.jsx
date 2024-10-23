@@ -132,10 +132,10 @@ export default function Statistics(props) {
             <Container>
                 <Row className='py-2'>
                     {/* Select box: Nationality */}
-                    <Col xs={2} className='d-flex align-items-center'>
+                    <Col xs={2} className='d-flex align-items-center col-5 col-sm-4 col-md-3 col-xl-2'>
                         <label htmlFor="nationality">Select Nationality:</label>
                     </Col>
-                    <Col>
+                    <Col className='col-12 col-sm-8 col-md-9 col-xl-10'>
 
                         <select className="form-select" id="nationality" value={paramNationality} name="nationality" onChange={(e) => handleParameterChange("nationality", e)}>
                             <option key="default" value="">Select All</option>
@@ -149,10 +149,10 @@ export default function Statistics(props) {
                 </Row>
                 <Row>
                     {/* Select box: Industy */}
-                    <Col xs={2} className='d-flex align-items-center'>
+                    <Col xs={2} className='d-flex align-items-center col-5 col-sm-4 col-md-3 col-xl-2'>
                         <label htmlFor="industry">Select Industry:</label>
                     </Col>
-                    <Col>
+                    <Col className='col-12 col-sm-8 col-md-9 col-xl-10'>
                         <select className="form-select" id="industry" name="industry" value={paramIndustry} onChange={(e) => handleParameterChange("industry", e)}>
                             <option key="default" value="">Select All</option>
                             {industries.map((industry, index) => (
@@ -165,10 +165,10 @@ export default function Statistics(props) {
                 </Row>
                 <Row className='py-2'>
                     {/* Select box: Occupations */}
-                    <Col xs={2} className='d-flex align-items-center'>
+                    <Col xs={2} className='d-flex align-items-center col-5 col-sm-4 col-md-3 col-xl-2'>
                         <label htmlFor="occupation">Select Occupations:</label>
                     </Col>
-                    <Col>
+                    <Col className='col-12 col-sm-8 col-md-9 col-xl-10'>
                         <select className="form-select" id="occupation" name="occupation" value={paramOccupation} onChange={(e) =>  handleParameterChange("occupation", e)}>
                             <option key="default" value="">Select All</option>
                             {occupations.map((occupation, index) => (

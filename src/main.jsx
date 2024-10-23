@@ -32,7 +32,7 @@ const router = createHashRouter([
         element: <Resume/>
       },
       {
-        path: 'visa_stats',
+        path: 'visa-stats',
         element: <VisaStats/>
       }
     ]
