@@ -132,7 +132,7 @@ export default function Statistics(props) {
             <Container>
                 <Row className='py-2'>
                     {/* Select box: Nationality */}
-                    <Col xs={2} className='d-flex align-items-center col-5 col-sm-4 col-md-3 col-xl-2'>
+                    <Col xs={2} className='d-flex align-items-center col-12 col-sm-4 col-md-3 col-xl-2'>
                         <label htmlFor="nationality">Select Nationality:</label>
                     </Col>
                     <Col className='col-12 col-sm-8 col-md-9 col-xl-10'>
@@ -149,7 +149,7 @@ export default function Statistics(props) {
                 </Row>
                 <Row>
                     {/* Select box: Industy */}
-                    <Col xs={2} className='d-flex align-items-center col-5 col-sm-4 col-md-3 col-xl-2'>
+                    <Col xs={2} className='d-flex align-items-center col-12 col-sm-4 col-md-3 col-xl-2'>
                         <label htmlFor="industry">Select Industry:</label>
                     </Col>
                     <Col className='col-12 col-sm-8 col-md-9 col-xl-10'>
@@ -165,8 +165,8 @@ export default function Statistics(props) {
                 </Row>
                 <Row className='py-2'>
                     {/* Select box: Occupations */}
-                    <Col xs={2} className='d-flex align-items-center col-5 col-sm-4 col-md-3 col-xl-2'>
-                        <label htmlFor="occupation">Select Occupations:</label>
+                    <Col xs={2} className='d-flex align-items-center col-12 col-sm-4 col-md-3 col-xl-2'>
+                        <label htmlFor="occupation">Select Occupation:</label>
                     </Col>
                     <Col className='col-12 col-sm-8 col-md-9 col-xl-10'>
                         <select className="form-select" id="occupation" name="occupation" value={paramOccupation} onChange={(e) =>  handleParameterChange("occupation", e)}>
