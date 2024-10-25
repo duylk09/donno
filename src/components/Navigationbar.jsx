@@ -18,6 +18,7 @@ function Navigationbar() {
                             <NavLink className="nav-link nav-item" to="/resume">Resume</NavLink>
                             <NavDropdown title="Projects" id="basic-nav-dropdown" className="dropdown-menu-end">
                                     <NavLink className="dropdown-item"  to="/visa-stats">UK Skilled Worker Visa Statistics</NavLink>
+                                    <NavLink className="dropdown-item"  to="/visa-stats">Youtube channel</NavLink>
                             </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>
