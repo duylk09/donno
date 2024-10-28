@@ -57,7 +57,7 @@ function Resume() {
                                             <div className="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">
                                                 <i class="bi bi-code-slash"></i>
                                             </div>
-                                            <span className="text-gradient d-inline">Languages</span>
+                                            <span className="text-gradient d-inline">Programming Languages</span>
                                         </h3>
                                     </Card.Title>
                                     <Container>
